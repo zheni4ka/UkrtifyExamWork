@@ -12,9 +12,9 @@ namespace Spotify
         public int Id { get; set; }
         public string Nickname { get; set; }
         public Country Country { get; set; }
-        public DateOnly BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         public int CountryId { get; set; }
-        public double OverallRating => Albums.Average(x => x.Rating);
+        public double OverallRating { get; set; }
         public int ProducerId { get; set; }
         public Producer Producer { get; set; }
         public ICollection<Album> Albums { get; set; } = new HashSet<Album>();

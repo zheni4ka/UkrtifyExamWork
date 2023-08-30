@@ -1,7 +1,11 @@
-﻿internal class Test
+﻿using Spotify;
+
+internal class Test
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        UkrtifyDbContext ukrtifyDbContext = new UkrtifyDbContext();
+
+        foreach (var i in ukrtifyDbContext.Genres) Console.WriteLine(i.Name);
     }
 }

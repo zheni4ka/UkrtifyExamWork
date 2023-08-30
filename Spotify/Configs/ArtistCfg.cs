@@ -17,9 +17,9 @@ namespace Spotify
             builder.Property(x => x.Nickname).HasMaxLength(150).IsRequired();
             builder.Property(x => x.BirthDate).IsRequired();
 
+
             builder.HasMany(x => x.Albums).WithOne(x => x.Artist).HasForeignKey(x => x.ArtistId).IsRequired();
             builder.HasOne(x => x.Country).WithMany(x => x.Artists).HasForeignKey(x => x.CountryId).IsRequired();
-            
         }
     }
 }

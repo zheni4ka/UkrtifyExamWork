@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spotify.Configs
+namespace Spotify
 {
     public class PlaylistCfg : IEntityTypeConfiguration<Playlist>
     {
@@ -15,6 +15,8 @@ namespace Spotify.Configs
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name).HasMaxLength(56).IsRequired();
+            builder.Property(x => x.CategoryId).IsRequired();
+            builder.Property(x => x.UserId).IsRequired();
 
             builder.HasMany(x => x.Tracks).WithMany(x => x.Playlists);
             builder.HasOne(x => x.Category).WithMany(x => x.Playlists).HasForeignKey(x => x.CategoryId);
