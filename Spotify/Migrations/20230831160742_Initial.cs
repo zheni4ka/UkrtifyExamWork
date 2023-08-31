@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Spotify.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -58,9 +58,9 @@ namespace Spotify.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nickname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nickname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -244,10 +244,16 @@ namespace Spotify.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Chill" },
-                    { 2, "Vibe" },
-                    { 3, "Sport" },
-                    { 4, "Work" }
+                    { 1, "Relaxing" },
+                    { 2, "Energetic" },
+                    { 3, "Motivational" },
+                    { 4, "Productive" },
+                    { 5, "Romantic" },
+                    { 6, "Sad" },
+                    { 7, "Happy" },
+                    { 8, "Party" },
+                    { 9, "Meditative" },
+                    { 10, "Classical" }
                 });
 
             migrationBuilder.InsertData(
@@ -261,7 +267,30 @@ namespace Spotify.Migrations
                     { 4, "UK" },
                     { 5, "Poland" },
                     { 6, "Japan" },
-                    { 7, "Sounth Korea" }
+                    { 7, "South Korea" },
+                    { 8, "China" },
+                    { 9, "India" },
+                    { 10, "Russia" },
+                    { 11, "France" },
+                    { 12, "Italy" },
+                    { 13, "Spain" },
+                    { 14, "Canada" },
+                    { 15, "Brazil" },
+                    { 16, "Mexico" },
+                    { 17, "Australia" },
+                    { 18, "New Zealand" },
+                    { 19, "Egypt" },
+                    { 20, "South Africa" },
+                    { 21, "Nigeria" },
+                    { 22, "Kenya" },
+                    { 23, "Turkey" },
+                    { 24, "Iran" },
+                    { 25, "Iraq" },
+                    { 26, "Saudi Arabia" },
+                    { 27, "Israel" },
+                    { 28, "Sweden" },
+                    { 29, "Norway" },
+                    { 30, "Finland" }
                 });
 
             migrationBuilder.InsertData(
@@ -272,7 +301,18 @@ namespace Spotify.Migrations
                     { 1, "Hip-hop" },
                     { 2, "Rock" },
                     { 3, "Pop" },
-                    { 4, "Jazz" }
+                    { 4, "Jazz" },
+                    { 5, "R&B" },
+                    { 6, "Country" },
+                    { 7, "Reggae" },
+                    { 8, "Metal" },
+                    { 9, "Blues" },
+                    { 10, "Folk" },
+                    { 11, "Electronic" },
+                    { 12, "Soul" },
+                    { 13, "Funk" },
+                    { 14, "Punk" },
+                    { 15, "Classical" }
                 });
 
             migrationBuilder.CreateIndex(

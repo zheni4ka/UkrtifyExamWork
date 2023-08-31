@@ -12,8 +12,8 @@ using Spotify;
 namespace Spotify.Migrations
 {
     [DbContext(typeof(UkrtifyDbContext))]
-    [Migration("20230830173430_initial")]
-    partial class initial
+    [Migration("20230831160742_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,22 +151,52 @@ namespace Spotify.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Chill"
+                            Name = "Relaxing"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Vibe"
+                            Name = "Energetic"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Sport"
+                            Name = "Motivational"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Work"
+                            Name = "Productive"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Romantic"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Sad"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Happy"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Party"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Meditative"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Classical"
                         });
                 });
 
@@ -220,7 +250,122 @@ namespace Spotify.Migrations
                         new
                         {
                             Id = 7,
-                            Name = "Sounth Korea"
+                            Name = "South Korea"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "China"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "India"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Russia"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "France"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Italy"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Spain"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Canada"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Brazil"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Mexico"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "Australia"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "New Zealand"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "Egypt"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "South Africa"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "Nigeria"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "Kenya"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "Turkey"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "Iran"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "Iraq"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "Saudi Arabia"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "Israel"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "Sweden"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Name = "Norway"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Name = "Finland"
                         });
                 });
 
@@ -261,6 +406,61 @@ namespace Spotify.Migrations
                         {
                             Id = 4,
                             Name = "Jazz"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "R&B"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Country"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Reggae"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Metal"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Blues"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Folk"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Electronic"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Soul"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Funk"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Punk"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Classical"
                         });
                 });
 
@@ -359,11 +559,13 @@ namespace Spotify.Migrations
 
                     b.Property<string>("Nickname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

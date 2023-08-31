@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Spotify;
 
@@ -11,9 +12,11 @@ using Spotify;
 namespace Spotify.Migrations
 {
     [DbContext(typeof(UkrtifyDbContext))]
-    partial class UkrtifyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230831161450_FstArtistAdded")]
+    partial class FstArtistAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,75 +132,12 @@ namespace Spotify.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 2,
-                            BirthDate = new DateTime(1972, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 1,
+                            BirthDate = new DateTime(1991, 4, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CountryId = 1,
-                            Nickname = "Eminem",
-                            OverallRating = 10.0,
-                            ProducerId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BirthDate = new DateTime(1981, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CountryId = 1,
-                            Nickname = "Beyoncé",
+                            Nickname = "Travis Scott",
                             OverallRating = 9.0,
-                            ProducerId = 9
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BirthDate = new DateTime(1989, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CountryId = 1,
-                            Nickname = "Taylor Swift",
-                            OverallRating = 8.0,
-                            ProducerId = 3
-                        },
-                        new
-                        {
-                            Id = 5,
-                            BirthDate = new DateTime(1958, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CountryId = 1,
-                            Nickname = "Michael Jackson",
-                            OverallRating = 10.0,
-                            ProducerId = 4
-                        },
-                        new
-                        {
-                            Id = 6,
-                            BirthDate = new DateTime(1960, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CountryId = 4,
-                            Nickname = "The Beatles",
-                            OverallRating = 10.0,
-                            ProducerId = 5
-                        },
-                        new
-                        {
-                            Id = 7,
-                            BirthDate = new DateTime(1981, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CountryId = 1,
-                            Nickname = "Justin Timberlake",
-                            OverallRating = 8.0,
-                            ProducerId = 6
-                        },
-                        new
-                        {
-                            Id = 8,
-                            BirthDate = new DateTime(1983, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CountryId = 1,
-                            Nickname = "Action Bronson",
-                            OverallRating = 7.0,
-                            ProducerId = 7
-                        },
-                        new
-                        {
-                            Id = 9,
-                            BirthDate = new DateTime(1973, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CountryId = 1,
-                            Nickname = "Nas",
-                            OverallRating = 9.0,
-                            ProducerId = 8
+                            ProducerId = 11
                         });
                 });
 
