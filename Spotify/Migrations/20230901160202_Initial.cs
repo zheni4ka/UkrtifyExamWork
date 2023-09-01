@@ -315,6 +315,39 @@ namespace Spotify.Migrations
                     { 15, "Classical" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Producers",
+                columns: new[] { "Id", "CountryId", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1, "Dr. Dre" },
+                    { 2, 1, "Rick Rubin" },
+                    { 3, 3, "Max Martin" },
+                    { 4, 1, "Quincy Jones" },
+                    { 5, 4, "George Martin" },
+                    { 6, 1, "Timbaland" },
+                    { 7, 1, "The Alchemist" },
+                    { 8, 1, "DJ Premier" },
+                    { 9, 1, "Pharrell Williams" },
+                    { 10, 1, "Kanye West" },
+                    { 11, 1, "Travis Scott" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Artists",
+                columns: new[] { "Id", "BirthDate", "CountryId", "Nickname", "OverallRating", "ProducerId" },
+                values: new object[,]
+                {
+                    { 2, new DateTime(1972, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Eminem", 10.0, 1 },
+                    { 3, new DateTime(1981, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Beyoncé", 9.0, 9 },
+                    { 4, new DateTime(1989, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Taylor Swift", 8.0, 3 },
+                    { 5, new DateTime(1958, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Michael Jackson", 10.0, 4 },
+                    { 6, new DateTime(1960, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, "The Beatles", 10.0, 5 },
+                    { 7, new DateTime(1981, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Justin Timberlake", 8.0, 6 },
+                    { 8, new DateTime(1983, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Action Bronson", 7.0, 7 },
+                    { 9, new DateTime(1973, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Nas", 9.0, 8 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Albums_ArtistId",
                 table: "Albums",

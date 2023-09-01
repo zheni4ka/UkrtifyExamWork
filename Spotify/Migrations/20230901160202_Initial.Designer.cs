@@ -12,7 +12,7 @@ using Spotify;
 namespace Spotify.Migrations
 {
     [DbContext(typeof(UkrtifyDbContext))]
-    [Migration("20230831160742_Initial")]
+    [Migration("20230901160202_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -128,6 +128,80 @@ namespace Spotify.Migrations
                     b.HasIndex("ProducerId");
 
                     b.ToTable("Artists");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 2,
+                            BirthDate = new DateTime(1972, 10, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 1,
+                            Nickname = "Eminem",
+                            OverallRating = 10.0,
+                            ProducerId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BirthDate = new DateTime(1981, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 1,
+                            Nickname = "Beyoncé",
+                            OverallRating = 9.0,
+                            ProducerId = 9
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BirthDate = new DateTime(1989, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 1,
+                            Nickname = "Taylor Swift",
+                            OverallRating = 8.0,
+                            ProducerId = 3
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BirthDate = new DateTime(1958, 8, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 1,
+                            Nickname = "Michael Jackson",
+                            OverallRating = 10.0,
+                            ProducerId = 4
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BirthDate = new DateTime(1960, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 4,
+                            Nickname = "The Beatles",
+                            OverallRating = 10.0,
+                            ProducerId = 5
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BirthDate = new DateTime(1981, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 1,
+                            Nickname = "Justin Timberlake",
+                            OverallRating = 8.0,
+                            ProducerId = 6
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BirthDate = new DateTime(1983, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 1,
+                            Nickname = "Action Bronson",
+                            OverallRating = 7.0,
+                            ProducerId = 7
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BirthDate = new DateTime(1973, 9, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CountryId = 1,
+                            Nickname = "Nas",
+                            OverallRating = 9.0,
+                            ProducerId = 8
+                        });
                 });
 
             modelBuilder.Entity("Spotify.Category", b =>
@@ -511,6 +585,74 @@ namespace Spotify.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Producers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryId = 1,
+                            Name = "Dr. Dre"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryId = 1,
+                            Name = "Rick Rubin"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 3,
+                            Name = "Max Martin"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CountryId = 1,
+                            Name = "Quincy Jones"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CountryId = 4,
+                            Name = "George Martin"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CountryId = 1,
+                            Name = "Timbaland"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CountryId = 1,
+                            Name = "The Alchemist"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CountryId = 1,
+                            Name = "DJ Premier"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CountryId = 1,
+                            Name = "Pharrell Williams"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CountryId = 1,
+                            Name = "Kanye West"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CountryId = 1,
+                            Name = "Travis Scott"
+                        });
                 });
 
             modelBuilder.Entity("Spotify.Track", b =>
