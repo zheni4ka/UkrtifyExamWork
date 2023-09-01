@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UKRTIFY_APP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -19,12 +19,14 @@
 
         <Label Content="Ukrtify" FontSize = "20"/>
         
-        <ListView Name="List" Grid.Row="1" Grid.Column="1" Margin = "30" ItemsSource="{Binding Path=Artists}">
+        <ListView Name="List" Grid.Row="1" Grid.Column="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <DockPanel>
-                        <TextBlock Text="{Binding Path = Nickname}" HorizontalAlignment="Left"/>
-                    </DockPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="{Binding Nickname}" />
+                        <TextBlock  Text="{Binding Producer}" Margin="400,0,0,0"/>
+                        <TextBlock  Text="{Binding OverallRating}" Margin="40,0,0,0"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

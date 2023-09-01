@@ -8,7 +8,7 @@ internal class Test
 
         foreach(var i in dbContext.Artists)
         {
-            Console.WriteLine(i.Nickname + " " + i.Country.Name);
+            Console.WriteLine(i.Nickname);
         }
     }
 }

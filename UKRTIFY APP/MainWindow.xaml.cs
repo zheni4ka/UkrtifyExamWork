@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Spotify.Interfaces;
+using Spotify.Repositories;
 
 namespace UKRTIFY_APP
 {
@@ -22,19 +24,20 @@ namespace UKRTIFY_APP
     /// </summary>
     public partial class MainWindow : Window
     {
-        ViewModel ViewModel { get; set; } = new ViewModel();
+        private IUoW uow = new UnitOfWork();
+
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = ViewModel;
+            List.ItemsSource = uow.ArtistRepo.Get(includeProperties: "Country,Producer").Select(x => new
+            {
+                x.Nickname,
+                Country = x.Country.Name,
+                x.OverallRating,
+                Producer = x.Producer.Name
+            });
         }
     }
 
-    [AddINotifyPropertyChangedInterface]
-    public class ViewModel
-    {
-        public UkrtifyDbContext db;
-        public IEnumerable<Artist> Artists => db.Artists.ToList();
-        
-    }
+    
 }

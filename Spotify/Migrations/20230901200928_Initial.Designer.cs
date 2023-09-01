@@ -12,7 +12,7 @@ using Spotify;
 namespace Spotify.Migrations
 {
     [DbContext(typeof(UkrtifyDbContext))]
-    [Migration("20230901160202_Initial")]
+    [Migration("20230901200928_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
