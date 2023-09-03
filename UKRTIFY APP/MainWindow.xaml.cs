@@ -29,13 +29,37 @@ namespace UKRTIFY_APP
         public MainWindow()
         {
             InitializeComponent();
-            List.ItemsSource = uow.ArtistRepo.Get(includeProperties: "Country,Producer").Select(x => new
+            tableView.ItemsSource = uow.ArtistRepo.Get(includeProperties: "Country,Producer").Select(x => new
             {
                 x.Nickname,
+                Producer = x.Producer.Name,
                 Country = x.Country.Name,
-                x.OverallRating,
-                Producer = x.Producer.Name
+                x.OverallRating
             });
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchBox.Text == "")
+            {
+                tableView.ItemsSource = uow.ArtistRepo.Get(includeProperties: "Country,Producer").Select(x => new
+                {
+                    x.Nickname,
+                    Producer = x.Producer.Name,
+                    Country = x.Country.Name,
+                    x.OverallRating
+                });
+            }
+            else
+            {
+                tableView.ItemsSource = uow.ArtistRepo.Get(includeProperties: "Country,Producer").Select(x => new
+                {
+                    x.Nickname,
+                    Producer = x.Producer.Name,
+                    Country = x.Country.Name,
+                    x.OverallRating
+                }).Where(x => x.Nickname.StartsWith(SearchBox.Text));
+            }
         }
     }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UKRTIFY_APP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1200">
+        Title="MainWindow" Height="450" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -18,21 +18,10 @@
         </Grid.RowDefinitions>
 
         <Label Content="Ukrtify" FontSize = "20"/>
-        
-        <ListView Name="List" Grid.Row="1" Grid.Column="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock  Text="{Binding Nickname}" />
-                        <TextBlock  Text="{Binding Producer}" Margin="400,0,0,0"/>
-                        <TextBlock  Text="{Binding OverallRating}" Margin="40,0,0,0"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
 
-        <TextBox BorderBrush="Black" Grid.Column="1" Margin="10">
-            
+
+        <DataGrid x:Name="tableView" Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" GridLinesVisibility="None" HorizontalScrollBarVisibility="Disabled" ColumnWidth="200"></DataGrid>
+        <TextBox Name="SearchBox" BorderBrush="Black" Grid.Column="1" Margin="17, 10" TextChanged="TextBox_TextChanged">
         </TextBox>
     </Grid>
 </Window>
