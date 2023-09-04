@@ -36,6 +36,7 @@ namespace UKRTIFY_APP
                 Country = x.Country.Name,
                 x.OverallRating
             });
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -52,6 +53,7 @@ namespace UKRTIFY_APP
             }
             else
             {
+
                 tableView.ItemsSource = uow.ArtistRepo.Get(includeProperties: "Country,Producer").Select(x => new
                 {
                     x.Nickname,

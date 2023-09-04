@@ -316,6 +316,15 @@ namespace Spotify.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Email", "Nickname", "Password" },
+                values: new object[,]
+                {
+                    { 1, "zhenya24@gmail.com", "Zhenya", "998vcf25A" },
+                    { 2, "viktor1433@gmail.com", "Viktor", "EEag435" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Producers",
                 columns: new[] { "Id", "CountryId", "Name" },
                 values: new object[,]

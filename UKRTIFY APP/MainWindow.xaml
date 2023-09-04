@@ -19,9 +19,13 @@
 
         <Label Content="Ukrtify" FontSize = "20"/>
 
-
+        <DockPanel Grid.Column="1" LastChildFill="False">
+        <TextBox Name="SearchBox" BorderBrush="Black" Grid.Column="1" Margin="12, 12" Width="400" HorizontalAlignment="Left" TextChanged="TextBox_TextChanged"/>
+            <Button Content="Add" FontSize="15" Margin="1, 9"/>
+        </DockPanel>
         <DataGrid x:Name="tableView" Grid.Row="1" Grid.Column="1" Margin="10,10,10,10" GridLinesVisibility="None" HorizontalScrollBarVisibility="Disabled" ColumnWidth="200"></DataGrid>
-        <TextBox Name="SearchBox" BorderBrush="Black" Grid.Column="1" Margin="17, 10" TextChanged="TextBox_TextChanged">
-        </TextBox>
+        <DataGrid x:Name="PlaylistView" Grid.Row="1" Margin="10" Background="White" GridLinesVisibility="None"/>
+
+
     </Grid>
 </Window>

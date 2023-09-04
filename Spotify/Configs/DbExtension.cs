@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -95,14 +98,29 @@ namespace Spotify
 
             modelBuilder.Entity<Artist>().HasData(new[]
             {
-                new Artist() {Id = 2, Nickname = "Eminem", ProducerId = 1, BirthDate = new DateTime(1972, 10, 17), OverallRating = 10, CountryId = 1},
-                new Artist() {Id = 3, Nickname = "Beyoncé", ProducerId = 9, BirthDate = new DateTime(1981, 9, 4), OverallRating = 9, CountryId = 1},
-                new Artist() {Id = 4, Nickname = "Taylor Swift", ProducerId = 3, BirthDate = new DateTime(1989, 12, 13), OverallRating = 8, CountryId = 1},
-                new Artist() {Id = 5, Nickname = "Michael Jackson", ProducerId = 4, BirthDate = new DateTime(1958, 8, 29), OverallRating = 10, CountryId = 1},
-                new Artist() {Id = 6, Nickname = "The Beatles", ProducerId = 5, BirthDate = new DateTime(1960, 1, 1), OverallRating = 10, CountryId = 4},
-                new Artist() {Id = 7, Nickname = "Justin Timberlake", ProducerId = 6, BirthDate = new DateTime(1981, 1, 31), OverallRating = 8, CountryId = 1},
-                new Artist() {Id = 8, Nickname = "Action Bronson", ProducerId = 7, BirthDate = new DateTime(1983, 12, 2), OverallRating = 7, CountryId = 1},
-                new Artist() {Id = 9, Nickname = "Nas", ProducerId = 8, BirthDate = new DateTime(1973, 9, 14), OverallRating = 9, CountryId = 1},
+                new Artist() {Id = 1, Nickname = "Eminem", ProducerId = 1, BirthDate = new DateTime(1972, 10, 17), OverallRating = 10, CountryId = 1},
+                new Artist() {Id = 2, Nickname = "Beyoncé", ProducerId = 9, BirthDate = new DateTime(1981, 9, 4), OverallRating = 9, CountryId = 1},
+                new Artist() {Id = 3, Nickname = "Taylor Swift", ProducerId = 3, BirthDate = new DateTime(1989, 12, 13), OverallRating = 8, CountryId = 1},
+                new Artist() {Id = 4, Nickname = "Michael Jackson", ProducerId = 4, BirthDate = new DateTime(1958, 8, 29), OverallRating = 10, CountryId = 1},
+                new Artist() {Id = 5, Nickname = "The Beatles", ProducerId = 5, BirthDate = new DateTime(1960, 1, 1), OverallRating = 10, CountryId = 4},
+                new Artist() {Id = 6, Nickname = "Justin Timberlake", ProducerId = 6, BirthDate = new DateTime(1981, 1, 31), OverallRating = 8, CountryId = 1},
+                new Artist() {Id = 7, Nickname = "Action Bronson", ProducerId = 7, BirthDate = new DateTime(1983, 12, 2), OverallRating = 7, CountryId = 1},
+                new Artist() {Id = 8, Nickname = "Nas", ProducerId = 8, BirthDate = new DateTime(1973, 9, 14), OverallRating = 9, CountryId = 1},
+            });
+
+            modelBuilder.Entity<Album>().HasData(new[] 
+            { new Album() { Id = 1, ArtistId = 1, Description = "The Marshall Mathers LP is the third studio album by American rapper Eminem, released on May 23, 2000, by Aftermath Entertainment and Interscope Records.", Name = "The Marshall Mathers LP", GenreId = 1, ReleaseDate = new DateTime(2000, 5, 23), Rating = 9, CountOfListening = 1000000 }, 
+              new Album() { Id = 2, ArtistId = 2, Description = "Lemonade is the sixth solo studio album by American singer Beyoncé.It was released on April 23, 2016 by Parkwood Entertainment and Columbia Records.", Name = "Lemonade", GenreId = 5, ReleaseDate = new DateTime(2016, 4, 23), Rating = 8, CountOfListening = 800000 }, 
+              new Album() { Id = 3, ArtistId = 3, Description = "1989 is the fifth studio album by American singer - songwriter Taylor Swift.It was released on October 27, 2014, through Big Machine Records.", Name = "1989", GenreId = 3, ReleaseDate = new DateTime(2014, 10, 27), Rating = 7, CountOfListening = 700000 }, 
+              new Album() { Id = 4, ArtistId = 4, Description = "Thriller is the sixth studio album by American singer Michael Jackson.It was released on November 30, 1982 by Epic Records.", Name = "Thriller", GenreId = 3, ReleaseDate = new DateTime(1982, 11, 30), Rating = 10, CountOfListening = 1500000 }, 
+              new Album() { Id = 5, ArtistId = 5, Description = "Abbey Road is the eleventh studio album by the English rock band the Beatles.It was released on September 26, 1969 by Apple Records.", Name = "Abbey Road", GenreId = 2, ReleaseDate = new DateTime(1969, 9, 26), Rating = 9, CountOfListening = 900000 } 
+            });
+
+
+            modelBuilder.Entity<User>().HasData(new[]
+            {
+                new User() {Id = 1, Nickname = "Zhenya", Email = "zhenya24@gmail.com", Password = "998vcf25A" },
+                new User() {Id = 2, Nickname = "Viktor", Email = "viktor1433@gmail.com", Password = "EEag435" }
             });
         }
     }

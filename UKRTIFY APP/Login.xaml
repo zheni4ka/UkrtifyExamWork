@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UKRTIFY_APP"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="300">
+        Title="Login" Height="250" Width="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Nickname here >>>" Margin="1,1,1,1" FontSize="20"/>
+        <Label Content="Password here >>>" Margin="1,1,1,1" Grid.Row="1" FontSize="20"/>
+
+        <TextBox x:Name="LoginInput" Grid.Column="1" Margin="10" BorderBrush="Black" FontSize="30"/>
+        <TextBox x:Name="PasswordInput" Grid.Column="1" Grid.Row="1" Margin="10" BorderBrush="Black" FontSize="30"/>
+        <Button Content="Login" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" Click="Button_Click"/>
+
+
     </Grid>
 </Window>

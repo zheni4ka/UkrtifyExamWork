@@ -12,7 +12,7 @@ using Spotify;
 namespace Spotify.Migrations
 {
     [DbContext(typeof(UkrtifyDbContext))]
-    [Migration("20230901200928_Initial")]
+    [Migration("20230904124528_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -712,6 +712,22 @@ namespace Spotify.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "zhenya24@gmail.com",
+                            Nickname = "Zhenya",
+                            Password = "998vcf25A"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "viktor1433@gmail.com",
+                            Nickname = "Viktor",
+                            Password = "EEag435"
+                        });
                 });
 
             modelBuilder.Entity("PlaylistTrack", b =>

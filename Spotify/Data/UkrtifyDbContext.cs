@@ -29,12 +29,12 @@ namespace Spotify
             modelBuilder.SeedData();
         }
 
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Album> Albums { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Producer> Producers { get; set; }
-        public DbSet<Category> Categories { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<Track> Tracks { get; set; }
         public DbSet<User> Users { get; set; }
