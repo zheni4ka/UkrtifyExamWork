@@ -11,10 +11,10 @@ namespace Spotify.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
     {
-        internal UkrtifyDbContext context;
+        internal SpotifyDbContext context;
         internal DbSet<TEntity> dbSet;
 
-        public Repository(UkrtifyDbContext context)
+        public Repository(SpotifyDbContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();

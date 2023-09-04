@@ -4,7 +4,7 @@ internal class Test
 {
     private static void Main(string[] args)
     {
-        UkrtifyDbContext dbContext = new UkrtifyDbContext();
+        SpotifyDbContext dbContext = new SpotifyDbContext();
 
         foreach(var i in dbContext.Users)
         {

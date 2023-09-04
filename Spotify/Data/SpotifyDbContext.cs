@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Spotify
 {
-    public class UkrtifyDbContext : DbContext
+    public class SpotifyDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -22,7 +22,7 @@ namespace Spotify.Repositories
     }
     public class UnitOfWork : IUoW, IDisposable
     {
-        private static UkrtifyDbContext context = new UkrtifyDbContext();
+        private static SpotifyDbContext context = new SpotifyDbContext();
         Repository<Album> albumRepo;
         Repository<Genre> genreRepo;
         Repository<Artist> artistRepo;

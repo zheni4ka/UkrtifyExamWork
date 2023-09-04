@@ -10,7 +10,7 @@ using Spotify;
 
 namespace Spotify.Migrations
 {
-    [DbContext(typeof(UkrtifyDbContext))]
+    [DbContext(typeof(SpotifyDbContext))]
     partial class UkrtifyDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

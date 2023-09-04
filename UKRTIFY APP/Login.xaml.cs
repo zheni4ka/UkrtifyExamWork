@@ -1,4 +1,5 @@
 ﻿using Spotify;
+using Spotify.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace UKRTIFY_APP
     /// </summary>
     public partial class Login : Window
     {
-        UkrtifyDbContext context = new();
+        private IUoW un = new UnitOfWork();
         public Login()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace UKRTIFY_APP
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var tmp = context.Users;
+            var tmp = un.UserRepo.Get();
             if (tmp.Where(x => x.Nickname == LoginInput.Text).First() != null) 
             {
                 if(tmp.Where(x => x.Nickname == LoginInput.Text).First().Password == PasswordInput.Text)

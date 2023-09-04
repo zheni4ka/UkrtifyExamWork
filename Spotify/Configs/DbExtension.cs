@@ -117,6 +117,36 @@ namespace Spotify
             });
 
 
+            modelBuilder.Entity<Track>().HasData(new[]
+            {
+                // Tracks for The Marshall Mathers LP by Eminem
+                new Track() {Id = 1, AlbumId = 1, Name = "The Real Slim Shady", CountOfListening = 500000, Duration = new TimeSpan(0, 4, 44), Rating = 9},
+                new Track() {Id = 2, AlbumId = 1, Name = "Stan", CountOfListening = 400000, Duration = new TimeSpan(0, 6, 44), Rating = 10},
+                new Track() {Id = 3, AlbumId = 1, Name = "The Way I Am", CountOfListening = 300000, Duration = new TimeSpan(0, 4, 50), Rating = 8},
+
+                // Tracks for Lemonade by Beyoncé
+                new Track() {Id = 4, AlbumId = 2, Name = "Formation", CountOfListening = 200000, Duration = new TimeSpan(0, 3, 26), Rating = 8},
+                new Track() {Id = 5, AlbumId = 2, Name = "Sorry", CountOfListening = 250000, Duration = new TimeSpan(0, 3, 53), Rating = 7},
+                new Track() {Id = 6, AlbumId = 2, Name = "Hold Up", CountOfListening = 150000, Duration = new TimeSpan(0, 3, 41), Rating = 9},
+
+                // Tracks for 1989 by Taylor Swift
+                new Track() {Id = 7, AlbumId = 3, Name = "Blank Space", CountOfListening = 350000, Duration = new TimeSpan(0, 3, 51), Rating = 7},
+                new Track() {Id = 8, AlbumId = 3, Name = "Shake It Off", CountOfListening = 450000, Duration = new TimeSpan(0, 3, 39), Rating = 8},
+                new Track() {Id = 9, AlbumId = 3, Name = "Style", CountOfListening = 300000, Duration = new TimeSpan(0, 3,51), Rating=7},
+
+                // Tracks for Thriller by Michael Jackson
+                new Track() {Id=10 ,AlbumId=4 ,Name="Thriller" ,CountOfListening=600000 ,Duration=new TimeSpan(0 ,5 ,57) ,Rating=10},
+                new Track() {Id=11 ,AlbumId=4 ,Name="Beat It" ,CountOfListening=500000 ,Duration=new TimeSpan(0 ,4 ,18) ,Rating=9},
+                new Track() {Id=12 ,AlbumId=4 ,Name="Billie Jean" ,CountOfListening=700000 ,Duration=new TimeSpan(0 ,4 ,54) ,Rating=10},
+
+                // Tracks for Abbey Road by The Beatles
+                new Track() {Id=13 ,AlbumId=5 ,Name="Come Together" ,CountOfListening=400000 ,Duration=new TimeSpan(0 ,4 ,19) ,Rating=9},
+                new Track() {Id=14 ,AlbumId=5 ,Name="Something" ,CountOfListening=300000 ,Duration=new TimeSpan(0 ,3 ,2) ,Rating=8},
+                new Track() {Id=15 ,AlbumId=5 ,Name="Here Comes the Sun" ,CountOfListening=500000 ,Duration=new TimeSpan(0 ,3 ,5) ,Rating=10}
+            });
+
+
+
             modelBuilder.Entity<User>().HasData(new[]
             {
                 new User() {Id = 1, Nickname = "Zhenya", Email = "zhenya24@gmail.com", Password = "998vcf25A" },

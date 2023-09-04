@@ -63,6 +63,12 @@ namespace UKRTIFY_APP
                 }).Where(x => x.Nickname.StartsWith(SearchBox.Text));
             }
         }
+
+        private void AddButtonClick_Click(object sender, RoutedEventArgs e)
+        {
+            AddPlaylistMenu menu = new AddPlaylistMenu();
+            menu.Show();
+        }
     }
 
     
